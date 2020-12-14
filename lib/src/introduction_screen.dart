@@ -34,8 +34,8 @@ class IntroductionScreen extends StatefulWidget {
     this.captions,
   })  : assert(pages != null),
         assert(
-        pages.length > 0,
-        'You provide at least one page on introduction screen !',
+          pages.length > 0,
+          'You provide at least one page on introduction screen !',
         ),
         assert(onDone != null),
         assert(done != null),
@@ -187,14 +187,14 @@ class IntroductionScreenState extends State<IntroductionScreen> {
     final captionsWidget = Container(
       child: widget.captions,
     );
-
+    final Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: widget.globalBackgroundColor,
       body: Column(
         children: [
           SizedBox(
-            width: context.deviceWidth,
-            height: context.deviceHeight / 1.8,
+            width: context.size.width,
+            height: context.size.height / 1.8,
             child: NotificationListener<ScrollNotification>(
               onNotification: _onScroll,
               child: PageView(
@@ -217,14 +217,14 @@ class IntroductionScreenState extends State<IntroductionScreen> {
                     child: Center(
                       child: widget.isProgress
                           ? DotsIndicator(
-                        dotsCount: widget.pages.length,
-                        position: _currentPage,
-                        decorator: const DotsDecorator(
-                          activeColor: kGoogleRedBright,
-                          size: Size.fromRadius(5),
-                          activeSize: Size.fromRadius(5),
-                        ),
-                      )
+                              dotsCount: widget.pages.length,
+                              position: _currentPage,
+                              decorator: const DotsDecorator(
+                                activeColor: Color(0xFFDD0113),
+                                size: Size.fromRadius(5),
+                                activeSize: Size.fromRadius(5),
+                              ),
+                            )
                           : const SizedBox(),
                     ),
                   ),
@@ -235,8 +235,8 @@ class IntroductionScreenState extends State<IntroductionScreen> {
                 child: isLastPage
                     ? doneBtn
                     : widget.showNextButton
-                    ? nextBtn
-                    : Opacity(opacity: 10, child: nextBtn),
+                        ? nextBtn
+                        : Opacity(opacity: 10, child: nextBtn),
               ),
               const SizedBox(height: 24),
               captionsWidget,
