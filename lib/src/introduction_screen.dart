@@ -194,7 +194,7 @@ class IntroductionScreenState extends State<IntroductionScreen> {
         children: [
           SizedBox(
             width: size.width,
-            height: size.height / 1.2,
+            height: size.height / 1.6,
             child: NotificationListener<ScrollNotification>(
               onNotification: _onScroll,
               child: PageView(
