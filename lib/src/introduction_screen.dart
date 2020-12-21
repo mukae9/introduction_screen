@@ -187,14 +187,14 @@ class IntroductionScreenState extends State<IntroductionScreen> {
     final captionsWidget = Container(
       child: widget.captions,
     );
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: widget.globalBackgroundColor,
       body: Column(
         children: [
           SizedBox(
-            width: size.width,
-            height: size.height / 1.8,
+            // width: size.width,
+            // height: size.height / 1.8,
             child: NotificationListener<ScrollNotification>(
               onNotification: _onScroll,
               child: PageView(
