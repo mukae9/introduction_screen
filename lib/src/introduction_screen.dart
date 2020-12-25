@@ -231,13 +231,7 @@ class IntroductionScreenState extends State<IntroductionScreen> {
                 ],
               ),
               const SizedBox(height: 24),
-              Center(
-                child: isLastPage
-                    ? doneBtn
-                    : widget.showNextButton
-                        ? nextBtn
-                        : Opacity(opacity: 10, child: nextBtn),
-              ),
+              Center(child: isLastPage ? doneBtn : null),
               const SizedBox(height: 24),
               captionsWidget,
               const SizedBox(height: 24),
